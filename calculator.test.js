@@ -2,7 +2,6 @@ const { add, subtract, multiply, divide, modulus } = require('./calculator');
 
 describe('Calculator Functions', () => {
   
-
   test('adds two positive numbers', () => {
     expect(add(2, 3)).toBe(5);
   });
@@ -15,7 +14,6 @@ describe('Calculator Functions', () => {
     expect(add(-4, -6)).toBe(-10);
   });
 
-
   test('subtracts two positive numbers', () => {
     expect(subtract(10, 4)).toBe(6);
   });
@@ -24,7 +22,6 @@ describe('Calculator Functions', () => {
     expect(subtract(3, 8)).toBe(-5);
   });
 
- 
   test('multiplies two positive numbers', () => {
     expect(multiply(3, 5)).toBe(15);
   });
@@ -37,7 +34,6 @@ describe('Calculator Functions', () => {
     expect(multiply(7, 0)).toBe(0);
   });
 
-
   test('divides two positive numbers', () => {
     expect(divide(20, 4)).toBe(5);
   });
@@ -48,6 +44,18 @@ describe('Calculator Functions', () => {
 
   test('throws error when dividing by zero', () => {
     expect(() => divide(10, 0)).toThrow('Cannot divide by zero');
+  });
+
+  test('finds modulus of two numbers', () => {
+    expect(modulus(10, 3)).toBe(1);
+  });
+
+  test('handles negative numbers in modulus', () => {
+    expect(modulus(-10, 3)).toBe(-10 % 3); 
+  });
+
+  test('throws error when modulus by zero', () => {
+    expect(() => modulus(5, 0)).toThrow('Cannot modulus divide by zero');
   });
 
 });
